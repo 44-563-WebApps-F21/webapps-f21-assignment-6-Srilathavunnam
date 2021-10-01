@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html java Script page</title>
+</head>    
+ 
+<body>
+    <h1>
+        Pass phrase by Vunnam SriLatha
+    </h1>
+
+<h2>Getting input</h2>
+<form>
+    <label for ="pwd">Enter the secret phrase</label>
+    <input type="password" id="pwd" name="pwd" value="Let me in">
+    <label for="phrase">Enter a phrase</label>
+    <input type="text" id="phrase" name="phrase">
+    <input type="button" onclick="processPhrase()" value="Check the phrase">
+    
+</form>
+
+<p id="result">place for results </p>
+
+<script> 
+let correct=0;
+let wrong=0;
+function processPhrase()
+{
+    var1=document.getElementById("pwd").value
+    var2=document.getElementById("phrase").value
+    con=document.getElementById("result")
+    if(var1 == var2)
+    {
+        correct=correct+1
+        alert("Access allowed")
+    }
+    else{
+        wrong=wrong+1
+
+        alert("Access denied")
+    }
+    con.innerHTML="Correct : "+correct+"\n Wrong : "+wrong
+
+}
+
+</script>
+
+</body>
+</html> 
