@@ -35,6 +35,40 @@
         }
         
     </script>
+    <form>
+        <input type="radio" id="rg_plus" value="plus" onclick="processRadio()" checked >
+        <label for="rg_plus">+</label></br>
+      
+        <input type="radio" id="rg_minus" value="minus" onclick="processRadio()">
+        <label for="rg_minus">-</label></br>
+      
+        <input type="radio" id="rg_multiplication" value="mul" onclick="processRadio()">
+        <label for="rg_multiplication">*</label></br>
+    
+        <input type="radio" id="rg_division" value="divide" onclick="processRadio()">
+        <label for="rg_division">/</label></br>    
+      </form>
+      
+      <p id=res2>Results are shown here!!!</p>
+      <script>
+          function processRadio(){         
+              base = document.getElementById("baseElement1").value
+              exponent = document.getElementById("exponentElement1").value
+              out= document.getElementById("res2")
+              if(document.getElementById('rg_plus').checked){
+                  out.innerHTML="Sum of "+base + " and "+ exponent + " = " +(Number(base)+Number(exponent))
+              }
+              if(document.getElementById('rg_minus').checked){
+                out.innerHTML="Difference of "+base + " and "+ exponent + " = " +(Number(base)-Number(exponent))
+              }
+              if(document.getElementById('rg_multiplication').checked){
+                out.innerHTML="Multiplication of "+base + " and "+ exponent + " = " +(Number(base)*Number(exponent))
+              }
+              if(document.getElementById('rg_division').checked){
+                out.innerHTML="Division of "+base + " and "+ exponent + " = " +(Number(base)/Number(exponent))
+              }
+          }
+      </script>
 
 </body>
 </html> 
