@@ -2,38 +2,57 @@
 <html>
  
 <body>
+    <h1>Sri Latha orders a car</h1>
 
 <h2>Getting input</h2>
 
 <form>
-    <label for="form1_age">What is your age </label>
-    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+    <label for="electric">electric </label>
+    <input type ="checkbox" id="electric" name= " Ball" value="electric"> <br>
 
-    <label for="form1_nick">What is your nickname </label>
-    <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
+    <label for="ac">ac </label>
+    <input type ="checkbox" id="ac" name="Laptop" value=" ac "> <br>
 
-    <input type="button" onclick="resolveForm()" value="Get values from form">
+    <label for="gps"> gps </label>
+    <input type ="checkbox" id="gps" name=" Pond " value=" gps "> <br>
+
+    <input type="button" onclick="orderCar()" value="Order a car">
 </form>
 
 
 <p id="result">This text will be replaced </p>
+<form>
+    <label for="name">Enter a property </label>
+    <input type="text" id="name" name="property_name" value="color"> <br>
+
+    <label for="value">Enter a value </label>
+    <input type="text" id="value" name="property_value"> <br>
+
+    <input type="button" onclick="updateCar()" value="Update the car">
+</form>
 
 <script> 
-
-function resolveForm (){
-    console.log("Getting form values")
-    age = document.getElementById("form1_age").value
-    nick = document.getElementById("form1_nick").value
-    confirmed = confirm("Are these the values? "+age+" and "+nick)
-    
-    out = document.getElementById("result")
-    if(confirmed){
-        out.innerHTML = "Values were confirmed"
-    } else {
-        out.innerHTML = "Values were not confirmed"
+    let my_car={}
+    function orderCar(){
+        let display1= document.getElementById("electric").checked
+        let display2= document.getElementById("ac").checked
+        let display3= document.getElementById("gps").checked
+        out=document.getElementById("result")
+        console.log(my_car);
+        my_car={electric: display1, ac: display2, gps: display3}
+        out.innerHTML = JSON.stringify(my_car)
     }
-}
-</script>
+    function updateCar() {
+            let property_name = document.getElementById("name").value
+            let property_value = document.getElementById("value").value
+                my_car[property_name] = property_value
+                document.getElementById("result").innerHTML = JSON.stringify(my_car)
+            }
+    
+    
+    
+    </script>
+    
 
 </body>
 </html> 
