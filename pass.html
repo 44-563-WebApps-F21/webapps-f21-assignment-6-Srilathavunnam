@@ -44,6 +44,31 @@ function processPhrase()
 }
 
 </script>
+<div class="container">
+   <img id ="nakka" src="vox.jpg" onclick="newImage()" height="200" weight="200">    
+      <script>
+         var usingImage=1;
+         function newImage()
+         {
+         switch(usingImage)
+         {
+            case 1:                        
+                var x=document.getElementById("nakka").src="vox.jpg";                        
+                usingImage++;
+                break;
+
+            case 2:
+                var y=document.getElementById("nakka").src="umbrellabird.jpg";
+                usingImage++;
+                break;
+
+            case 3:
+                var z=document.getElementById("nakka").src="Nightingale.jpg";                        
+                usingImage=1;
+                break;
+         }
+         }
+</script>
 
 </body>
 </html> 
